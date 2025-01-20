@@ -70,10 +70,17 @@ checker();
 // "Good Evening" if the time is between 5 PM and 9 PM.
 // "Good Night" if the time is between 9 PM and 5 AM.
 
+let time = parseInt(prompt("Enter the current time in 24-hour format (e.g., 6 for 6:00 AM, 18 for 6:00 PM): "));
 
-
-// 5. Shopping Cart Total
-// Build a function to calculate the total cost of items in a shopping cart.
-
-// Input: An array of item prices (e.g., [5.99, 12.99, 3.49]).
-// Output: The total cost (sum of all item prices).
+function greeting () {
+    if (time >= 5 && time <= 12) {
+    console.log("Good Morning");
+} else if (time >= 12 && time <= 17) {
+    console.log("Good Afternoon");
+} else if (time >= 17 && time <= 21) {
+    console.log("Good Evening");
+} else {
+    console.log("Good Night");
+}
+}
+greeting();
