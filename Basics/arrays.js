@@ -50,7 +50,11 @@ Find and display the highest temperature of the week.
 Find and display the lowest temperature of the week.
 Add 2 degrees to each temperature (to simulate a temperature rise) and display the updated temperatures. */
 
-
+const weekTemperature = [20, 25, 20, 23, 19, 24, 21];
+const lowest = Math.min(...weekTemperature);
+console.log(lowest);
+const highest = Math.max(...weekTemperature);
+console.log(highest);
 
 
 /* 5: Shopping Cart
@@ -60,3 +64,14 @@ Calculate and display the total cost of all items.
 Remove the cheapest item from the cart and display the updated list of prices.
 Add a new item priced at 200 and display the updated cart. */
 
+let cart = [100, 250, 75, 300, 150, 250];
+let total = 0;
+for (let i = 0; i < cart.length; i++) {
+    total += cart[i];
+}
+let smallestElement = Math.min(...cart);
+console.log(total);
+cart = cart.filter(item => item !== smallestElement);
+console.log(cart);
+cart.push(200)
+console.log(cart);
