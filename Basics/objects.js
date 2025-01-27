@@ -35,11 +35,29 @@ Add a method updateStock that increases the quantity by a given number.
 Add a method getPriceWithTax to calculate and return the price with 10% tax.
 Change the price of the product. */
 
-const products = {
-    productName: "Butter",
-    price: 500,
-    quantity: 50,
-}
+let product = {
+    productName: "Wireless Headphones",
+    price: 150,
+    quantity: 30,
+
+    updateStock: function (newStock) {
+        this.quantity += newStock;
+        console.log(`Stock updated. New quantity: ${this.quantity}`);
+    },
+
+    getPriceWithTax: function () {
+        const priceWithTax = this.price * 1.10; 
+        return priceWithTax.toFixed(2); 
+    }
+};
+
+product.updateStock(20); 
+
+console.log(`Price with 10% tax: $${product.getPriceWithTax()}`);
+
+product.price = 180;
+console.log(`The updated price of ${product.productName} is $${product.price}.`);
+
 
 /* 3. Car Object
 Create an object to represent a car. The object should have the following properties:
@@ -52,6 +70,19 @@ Tasks:
 Add a method getCarDetails that returns a string: "Brand: [brand], Model: [model], Year: [year]".
 Add a new property color to the car.
 Update the year to the current year. */
+
+let car = {
+    brand: "Hyundai",
+    model: "Sonata",
+    year: 2020,
+}
+
+let keys = Object.keys(car); // to show values in string
+console.log("Keys of the car object:", keys);
+
+car.color = "Yellow"; // add color
+car.year = new Date().getFullYear(); // to update year
+console.log("Updated car object:", car);
 
 
 /* 4. Library System
@@ -66,6 +97,24 @@ Add a method toggleAvailability to switch the isAvailable status.
 Add a property borrowerName and set it to "Unknown".
 Update the title of the book. */
 
+let book = {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    isAvailable: true,
+    toggleAvailability: function () {
+        this.isAvailable = !this.isAvailable;
+    }
+};
+
+book.borrowerName = "Unknown";
+
+book.title = "The Great Gatsby - Updated Edition";
+
+console.log("Updated Book Object:", book);
+
+book.toggleAvailability();
+console.log("Availability after toggle:", book.isAvailable);
+
 
 /* 5. Weather App
 Create an object to represent the weather of a city. The object should include:
@@ -78,3 +127,17 @@ Tasks:
 Add a method displayWeather to print a message like: "The weather in [city] is [temperature]°C and [condition].".
 Add a new property humidity.
 Update the temperature and condition values. */
+
+let weather = {
+    city: "Lahore",
+    temperature: 25,
+    condition: "Sunny",
+}
+
+let displayWeather = `The weather in ${weather.city} is ${weather.temperature}°C and ${weather.condition}.`;
+console.log(displayWeather);
+weather.humidity = "39%";
+weather.temperature = 21;
+weather.condition = "Cloudy";
+
+console.log("Update Weather in Lahore", weather);
